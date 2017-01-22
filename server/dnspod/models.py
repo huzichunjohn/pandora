@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class Domain(models.Model):
     name = models.CharField(max_length=50)
+    domain_id = models.PositiveIntegerField()
     
 class Role(models.Model):
     domain = models.ForeignKey(Domain, related_name='roles', on_delete=models.CASCADE)

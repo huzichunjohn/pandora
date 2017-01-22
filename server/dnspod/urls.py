@@ -9,5 +9,7 @@ router.register(r'users', views.UserViewSet)
 urlpatterns = [
     url(r'^api/token/', obtain_auth_token, name='api-token'),
     url(r'^api/domains/$', views.DomainList.as_view()),
+    url(r'^api/domains/(?P<domain_id>[0-9]+)/$', views.DomainDetail.as_view()),
+    url(r'^api/domains/(?P<domain_id>[0-9]+)/(?P<record_id>[0-9]+)/$', views.RecordDetail.as_view()),
     url(r'^api/', include(router.urls)),
 ]
